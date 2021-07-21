@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Fil.Rouge.DataAccessLayer.Models.ParticipantData>
+
+@{
+    ViewBag.Title = "SaveSelectedQuiz";
+}
+
+<h2>SaveSelectedQuiz</h2>
+
+<p>
+    Insertion de : @ViewBag.Count enregistrement(s)
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AgentParticipant.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Participant.Lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quiz.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuizValidAnswer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuizQstart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuizQend)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuizCommentPart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuizFreeAnswer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuizValidFreeAnswer)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgentParticipant.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Participant.Lastname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quiz.Subject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuizValidAnswer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuizQstart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuizQend)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuizCommentPart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuizFreeAnswer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuizValidFreeAnswer)
+        </td>
+    </tr>
+}
+
+</table>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

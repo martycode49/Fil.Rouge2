@@ -1,0 +1,96 @@
+﻿@model Fil.Rouge.DataAccessLayer.Models.ParticipantData
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ParticipantData</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AgentParticipant.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgentParticipant.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Participant.Lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Participant.Lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quiz.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quiz.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizValidAnswer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizValidAnswer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizQstart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizQstart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizQend)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizQend)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizCommentPart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizCommentPart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizFreeAnswer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizFreeAnswer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizValidFreeAnswer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizValidFreeAnswer)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

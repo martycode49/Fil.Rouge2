@@ -1,0 +1,96 @@
+﻿@model Fil.Rouge.DataAccessLayer.Models.QuizParticipantVM
+@{
+    ViewBag.Title = "QuizManagerView";
+}
+
+@{
+    WebGrid wbgrid = new WebGrid(source: Model.Quizzes);
+}
+<h2>QuizManagerView</h2>
+<h3>------ Participants -----</h3>
+@using (Html.BeginForm("index", "QuizManager", FormMethod.Get))
+{
+    <p>
+        <input type="text" name="searchStrParticipant" placeholder="Enter name..." />
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Nom", "Index", new { sortOrderParticipant = ViewBag.NameSortParm })
+        </th>
+        <th>
+            Prénom
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Participants)
+    {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Lastname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Firstname)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
+    }
+
+</table>
+
+<h3>------ Quizs -----</h3>
+
+@using (Html.BeginForm("SaveSelectedQuiz", "QuizManager", FormMethod.Post))
+{
+    <table class="table">
+        <tr>
+            <th>
+                Select
+            </th>
+            <th>
+                Question
+            </th>
+            <th>
+                niveau
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Quizzes)
+        {
+            <tr>
+                <td>
+                    @*@Html.CheckBoxFor(x => x.IsSelectedQuiz)*@
+                    <input type="checkbox" name="SelectedStatus" value="@item.Id" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Question)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Level)
+                </td>
+            </tr>
+        }
+
+    </table>
+    <button type="submit" id="btnSave" >Save</button>
+}
+@*<h3> ------------ Checkbox test ---------</h3>
+    @MvcHtmlString.Create(wbgrid.GetHtml(
+                                    tableStyle: "table",
+                                    columns: new[]
+                                    {
+                                        wbgrid.Column(header:"{chkboxheader}",
+                                        format: @<text><input type="checkbox" id="chk1" class="ckbox"/></text>),
+                                        wbgrid.Column("id", "Id")
+
+                                    }));*@

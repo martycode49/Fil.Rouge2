@@ -1,0 +1,112 @@
+﻿@model Fil.Rouge.DataAccessLayer.Models.Quiz
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Quiz</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubSubject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubSubject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuestionType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuestionType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Question)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Question)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rep1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rep1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rep2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rep2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rep3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rep3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rep4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rep4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Validquestion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Validquestion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentFalse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentFalse)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

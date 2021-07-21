@@ -1,0 +1,90 @@
+﻿@model Fil.Rouge.DataAccessLayer.Models.ParticipantData
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ParticipantData</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AgentParticipant.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgentParticipant.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Participant.Lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Participant.Lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quiz.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quiz.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizValidAnswer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizValidAnswer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizQstart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizQstart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizQend)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizQend)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizCommentPart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizCommentPart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizFreeAnswer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizFreeAnswer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizValidFreeAnswer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizValidFreeAnswer)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
